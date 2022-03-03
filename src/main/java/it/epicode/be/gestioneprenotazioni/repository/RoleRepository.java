@@ -1,0 +1,13 @@
+package it.epicode.be.gestioneprenotazioni.repository;
+
+import java.util.Optional;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+
+import it.epicode.be.gestioneprenotazioni.model.Role;
+import it.epicode.be.gestioneprenotazioni.model.Roles;
+
+public interface RoleRepository extends JpaRepository<Role, Integer> {
+
+	Optional<Role> findByRoleName(Roles role);
+}

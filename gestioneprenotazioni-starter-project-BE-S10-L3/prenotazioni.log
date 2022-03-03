@@ -1,0 +1,242 @@
+"2022-02-28 [main] INFO  i.e.b.g.GestioneprenotazioniApplication - Starting GestioneprenotazioniApplication using Java 17.0.2 on MBP-di-Davide with PID 10190 (/Users/davidefella/Desktop/TMP/gestioneprenotazioni-starter-project-BE-S10-L3/target/classes started by davidefella in /Users/davidefella/Desktop/TMP/gestioneprenotazioni-starter-project-BE-S10-L3)
+""2022-02-28 [main] DEBUG i.e.b.g.GestioneprenotazioniApplication - Running with Spring Boot v2.5.4, Spring v5.3.9
+""2022-02-28 [main] INFO  i.e.b.g.GestioneprenotazioniApplication - No active profile set, falling back to default profiles: default
+""2022-02-28 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+""2022-02-28 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 51 ms. Found 5 JPA repository interfaces.
+""2022-02-28 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+""2022-02-28 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+""2022-02-28 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.52]
+""2022-02-28 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+""2022-02-28 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1309 ms
+""2022-02-28 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+""2022-02-28 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+""2022-02-28 [main] INFO  o.s.b.a.h.H2ConsoleAutoConfiguration - H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:prenotazioni'
+""2022-02-28 [main] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+""2022-02-28 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 5.4.32.Final
+""2022-02-28 [main] INFO  o.h.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+""2022-02-28 [main] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+""2022-02-28 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+""2022-02-28 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+""2022-02-28 [main] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+""2022-02-28 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+""2022-02-28 [main] INFO  i.e.b.g.GestioneprenotazioniApplication - Started GestioneprenotazioniApplication in 3.614 seconds (JVM running for 4.371)
+""2022-02-28 [main] INFO  i.e.b.g.c.u.ApplicationStartupRunner - Saved Città: Roma
+""2022-02-28 [main] INFO  i.e.b.g.c.u.ApplicationStartupRunner - Saved Edificio: Sede Centrale - Roma
+""2022-02-28 [main] INFO  i.e.b.g.c.u.ApplicationStartupRunner - Saved Edificio: Sede Distaccata - Roma
+""2022-02-28 [main] INFO  i.e.b.g.c.u.ApplicationStartupRunner - Saved Postazione: P_1_Sede Centrale - Roma
+""2022-02-28 [main] INFO  i.e.b.g.c.u.ApplicationStartupRunner - Saved Postazione: P_2_Sede Centrale - Roma
+""2022-02-28 [main] INFO  i.e.b.g.c.u.ApplicationStartupRunner - Saved Postazione: P_3_Sede Centrale - Roma
+""2022-02-28 [main] INFO  i.e.b.g.c.u.ApplicationStartupRunner - Saved Postazione: P_1_Sede Distaccata - Roma
+""2022-02-28 [main] INFO  i.e.b.g.c.u.ApplicationStartupRunner - Saved Postazione: P_2_Sede Distaccata - Roma
+""2022-02-28 [main] INFO  i.e.b.g.c.u.ApplicationStartupRunner - Saved Postazione: P_3_Sede Distaccata - Roma
+""2022-02-28 [main] INFO  i.e.b.g.c.u.ApplicationStartupRunner - Saved Utente: Mario Rossi
+""2022-02-28 [http-nio-8080-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+""2022-02-28 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+""2022-02-28 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 4 ms
+""2022-02-28 [RMI TCP Connection(2)-127.0.0.1] INFO  o.s.b.a.SpringApplicationAdminMXBeanRegistrar$SpringApplicationAdmin - Application shutdown requested.
+""2022-02-28 [RMI TCP Connection(2)-127.0.0.1] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+""2022-02-28 [RMI TCP Connection(2)-127.0.0.1] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+""2022-02-28 [RMI TCP Connection(2)-127.0.0.1] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+""2022-02-28 [main] INFO  i.e.b.g.GestioneprenotazioniApplication - Starting GestioneprenotazioniApplication using Java 17.0.2 on MBP-di-Davide with PID 10208 (/Users/davidefella/Desktop/TMP/gestioneprenotazioni-starter-project-BE-S10-L3/target/classes started by davidefella in /Users/davidefella/Desktop/TMP/gestioneprenotazioni-starter-project-BE-S10-L3)
+""2022-02-28 [main] DEBUG i.e.b.g.GestioneprenotazioniApplication - Running with Spring Boot v2.5.4, Spring v5.3.9
+""2022-02-28 [main] INFO  i.e.b.g.GestioneprenotazioniApplication - No active profile set, falling back to default profiles: default
+""2022-02-28 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+""2022-02-28 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 48 ms. Found 5 JPA repository interfaces.
+""2022-02-28 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+""2022-02-28 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+""2022-02-28 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.52]
+""2022-02-28 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+""2022-02-28 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1177 ms
+""2022-02-28 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+""2022-02-28 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+""2022-02-28 [main] INFO  o.s.b.a.h.H2ConsoleAutoConfiguration - H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:prenotazioni'
+""2022-02-28 [main] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+""2022-02-28 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 5.4.32.Final
+""2022-02-28 [main] INFO  o.h.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+""2022-02-28 [main] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+""2022-02-28 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+""2022-02-28 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+""2022-02-28 [main] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+""2022-02-28 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+""2022-02-28 [main] INFO  i.e.b.g.GestioneprenotazioniApplication - Started GestioneprenotazioniApplication in 3.383 seconds (JVM running for 4.077)
+""2022-02-28 [main] INFO  i.e.b.g.c.u.ApplicationStartupRunner - Saved Città: Roma
+""2022-02-28 [main] INFO  i.e.b.g.c.u.ApplicationStartupRunner - Saved Edificio: Sede Centrale - Roma
+""2022-02-28 [main] INFO  i.e.b.g.c.u.ApplicationStartupRunner - Saved Edificio: Sede Distaccata - Roma
+""2022-02-28 [main] INFO  i.e.b.g.c.u.ApplicationStartupRunner - Saved Postazione: P_1_Sede Centrale - Roma
+""2022-02-28 [main] INFO  i.e.b.g.c.u.ApplicationStartupRunner - Saved Postazione: P_2_Sede Centrale - Roma
+""2022-02-28 [main] INFO  i.e.b.g.c.u.ApplicationStartupRunner - Saved Postazione: P_3_Sede Centrale - Roma
+""2022-02-28 [main] INFO  i.e.b.g.c.u.ApplicationStartupRunner - Saved Postazione: P_1_Sede Distaccata - Roma
+""2022-02-28 [main] INFO  i.e.b.g.c.u.ApplicationStartupRunner - Saved Postazione: P_2_Sede Distaccata - Roma
+""2022-02-28 [main] INFO  i.e.b.g.c.u.ApplicationStartupRunner - Saved Postazione: P_3_Sede Distaccata - Roma
+""2022-02-28 [main] INFO  i.e.b.g.c.u.ApplicationStartupRunner - Saved Utente: Mario Rossi
+""2022-02-28 [http-nio-8080-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+""2022-02-28 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+""2022-02-28 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 4 ms
+""2022-02-28 [main] INFO  i.e.b.g.GestioneprenotazioniApplication - Starting GestioneprenotazioniApplication using Java 17.0.2 on MBP-di-Davide with PID 10262 (/Users/davidefella/Desktop/TMP/gestioneprenotazioni-starter-project-BE-S10-L3/target/classes started by davidefella in /Users/davidefella/Desktop/TMP/gestioneprenotazioni-starter-project-BE-S10-L3)
+""2022-02-28 [main] DEBUG i.e.b.g.GestioneprenotazioniApplication - Running with Spring Boot v2.5.4, Spring v5.3.9
+""2022-02-28 [main] INFO  i.e.b.g.GestioneprenotazioniApplication - No active profile set, falling back to default profiles: default
+""2022-02-28 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+""2022-02-28 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 54 ms. Found 5 JPA repository interfaces.
+""2022-02-28 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+""2022-02-28 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+""2022-02-28 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.52]
+""2022-02-28 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+""2022-02-28 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1303 ms
+""2022-02-28 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+""2022-02-28 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+""2022-02-28 [main] INFO  o.s.b.a.h.H2ConsoleAutoConfiguration - H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:prenotazioni'
+""2022-02-28 [main] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+""2022-02-28 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 5.4.32.Final
+""2022-02-28 [main] INFO  o.h.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+""2022-02-28 [main] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+""2022-02-28 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+""2022-02-28 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+""2022-02-28 [main] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+""2022-02-28 [main] WARN  o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.context.ApplicationContextException: Failed to start bean 'webServerStartStop'; nested exception is org.springframework.boot.web.server.PortInUseException: Port 8080 is already in use
+""2022-02-28 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+""2022-02-28 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+""2022-02-28 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+""2022-02-28 [main] INFO  o.a.catalina.core.StandardService - Stopping service [Tomcat]
+""2022-02-28 [main] INFO  o.s.b.a.l.ConditionEvaluationReportLoggingListener - 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+""2022-02-28 [main] ERROR o.s.b.d.LoggingFailureAnalysisReporter - 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Web server failed to start. Port 8080 was already in use.
+
+Action:
+
+Identify and stop the process that's listening on port 8080 or configure this application to listen on another port.
+
+""2022-02-28 [RMI TCP Connection(2)-127.0.0.1] INFO  o.s.b.a.SpringApplicationAdminMXBeanRegistrar$SpringApplicationAdmin - Application shutdown requested.
+""2022-02-28 [RMI TCP Connection(2)-127.0.0.1] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+""2022-02-28 [RMI TCP Connection(2)-127.0.0.1] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+""2022-02-28 [RMI TCP Connection(2)-127.0.0.1] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+""2022-02-28 [main] INFO  i.e.b.g.GestioneprenotazioniApplication - Starting GestioneprenotazioniApplication using Java 17.0.2 on MBP-di-Davide with PID 10264 (/Users/davidefella/Desktop/TMP/gestioneprenotazioni-starter-project-BE-S10-L3/target/classes started by davidefella in /Users/davidefella/Desktop/TMP/gestioneprenotazioni-starter-project-BE-S10-L3)
+""2022-02-28 [main] DEBUG i.e.b.g.GestioneprenotazioniApplication - Running with Spring Boot v2.5.4, Spring v5.3.9
+""2022-02-28 [main] INFO  i.e.b.g.GestioneprenotazioniApplication - No active profile set, falling back to default profiles: default
+""2022-02-28 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+""2022-02-28 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 52 ms. Found 5 JPA repository interfaces.
+""2022-02-28 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+""2022-02-28 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+""2022-02-28 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.52]
+""2022-02-28 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+""2022-02-28 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1310 ms
+""2022-02-28 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+""2022-02-28 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+""2022-02-28 [main] INFO  o.s.b.a.h.H2ConsoleAutoConfiguration - H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:prenotazioni'
+""2022-02-28 [main] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+""2022-02-28 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 5.4.32.Final
+""2022-02-28 [main] INFO  o.h.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+""2022-02-28 [main] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+""2022-02-28 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+""2022-02-28 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+""2022-02-28 [main] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+""2022-02-28 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+""2022-02-28 [main] INFO  i.e.b.g.GestioneprenotazioniApplication - Started GestioneprenotazioniApplication in 4.028 seconds (JVM running for 4.733)
+""2022-02-28 [main] INFO  i.e.b.g.c.u.ApplicationStartupRunner - Saved Città: Roma
+""2022-02-28 [main] INFO  i.e.b.g.c.u.ApplicationStartupRunner - Saved Edificio: Sede Centrale - Roma
+""2022-02-28 [main] INFO  i.e.b.g.c.u.ApplicationStartupRunner - Saved Edificio: Sede Distaccata - Roma
+""2022-02-28 [main] INFO  i.e.b.g.c.u.ApplicationStartupRunner - Saved Postazione: P_1_Sede Centrale - Roma
+""2022-02-28 [main] INFO  i.e.b.g.c.u.ApplicationStartupRunner - Saved Postazione: P_2_Sede Centrale - Roma
+""2022-02-28 [main] INFO  i.e.b.g.c.u.ApplicationStartupRunner - Saved Postazione: P_3_Sede Centrale - Roma
+""2022-02-28 [main] INFO  i.e.b.g.c.u.ApplicationStartupRunner - Saved Postazione: P_1_Sede Distaccata - Roma
+""2022-02-28 [main] INFO  i.e.b.g.c.u.ApplicationStartupRunner - Saved Postazione: P_2_Sede Distaccata - Roma
+""2022-02-28 [main] INFO  i.e.b.g.c.u.ApplicationStartupRunner - Saved Postazione: P_3_Sede Distaccata - Roma
+""2022-02-28 [main] INFO  i.e.b.g.c.u.ApplicationStartupRunner - Saved Utente: Mario Rossi
+""2022-02-28 [http-nio-8080-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+""2022-02-28 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+""2022-02-28 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 1 ms
+""2022-02-28 [http-nio-8080-exec-9] INFO  o.s.api.AbstractOpenApiResource - Init duration for springdoc-openapi is: 643 ms
+""2022-02-28 [RMI TCP Connection(2)-127.0.0.1] INFO  o.s.b.a.SpringApplicationAdminMXBeanRegistrar$SpringApplicationAdmin - Application shutdown requested.
+""2022-02-28 [RMI TCP Connection(2)-127.0.0.1] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+""2022-02-28 [RMI TCP Connection(2)-127.0.0.1] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+""2022-02-28 [RMI TCP Connection(2)-127.0.0.1] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+""2022-02-28 [main] INFO  i.e.b.g.GestioneprenotazioniApplication - Starting GestioneprenotazioniApplication using Java 17.0.2 on MacBook-Pro-di-Davide.local with PID 10694 (/Users/davidefella/Desktop/TMP/gestioneprenotazioni-starter-project-BE-S10-L3/target/classes started by davidefella in /Users/davidefella/Desktop/TMP/gestioneprenotazioni-starter-project-BE-S10-L3)
+""2022-02-28 [main] DEBUG i.e.b.g.GestioneprenotazioniApplication - Running with Spring Boot v2.5.4, Spring v5.3.9
+""2022-02-28 [main] INFO  i.e.b.g.GestioneprenotazioniApplication - No active profile set, falling back to default profiles: default
+""2022-02-28 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+""2022-02-28 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 53 ms. Found 5 JPA repository interfaces.
+""2022-02-28 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+""2022-02-28 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+""2022-02-28 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.52]
+""2022-02-28 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+""2022-02-28 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1237 ms
+""2022-02-28 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+""2022-02-28 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+""2022-02-28 [main] INFO  o.s.b.a.h.H2ConsoleAutoConfiguration - H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:prenotazioni'
+""2022-02-28 [main] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+""2022-02-28 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 5.4.32.Final
+""2022-02-28 [main] INFO  o.h.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+""2022-02-28 [main] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+""2022-02-28 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+""2022-02-28 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+""2022-02-28 [main] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+""2022-02-28 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+""2022-02-28 [main] INFO  i.e.b.g.GestioneprenotazioniApplication - Started GestioneprenotazioniApplication in 3.874 seconds (JVM running for 4.604)
+""2022-02-28 [main] INFO  i.e.b.g.c.u.ApplicationStartupRunner - Saved Città: Roma
+""2022-02-28 [main] INFO  i.e.b.g.c.u.ApplicationStartupRunner - Saved Edificio: Sede Centrale - Roma
+""2022-02-28 [main] INFO  i.e.b.g.c.u.ApplicationStartupRunner - Saved Edificio: Sede Distaccata - Roma
+""2022-02-28 [main] INFO  i.e.b.g.c.u.ApplicationStartupRunner - Saved Postazione: P_1_Sede Centrale - Roma
+""2022-02-28 [main] INFO  i.e.b.g.c.u.ApplicationStartupRunner - Saved Postazione: P_2_Sede Centrale - Roma
+""2022-02-28 [main] INFO  i.e.b.g.c.u.ApplicationStartupRunner - Saved Postazione: P_3_Sede Centrale - Roma
+""2022-02-28 [main] INFO  i.e.b.g.c.u.ApplicationStartupRunner - Saved Postazione: P_1_Sede Distaccata - Roma
+""2022-02-28 [main] INFO  i.e.b.g.c.u.ApplicationStartupRunner - Saved Postazione: P_2_Sede Distaccata - Roma
+""2022-02-28 [main] INFO  i.e.b.g.c.u.ApplicationStartupRunner - Saved Postazione: P_3_Sede Distaccata - Roma
+""2022-02-28 [main] INFO  i.e.b.g.c.u.ApplicationStartupRunner - Saved Utente: Mario Rossi
+""2022-02-28 [main] INFO  i.e.b.g.GestioneprenotazioniApplication - Starting GestioneprenotazioniApplication using Java 17.0.2 on MacBook-Pro-di-Davide.local with PID 10702 (/Users/davidefella/Desktop/TMP/gestioneprenotazioni-starter-project-BE-S10-L3/target/classes started by davidefella in /Users/davidefella/Desktop/TMP/gestioneprenotazioni-starter-project-BE-S10-L3)
+""2022-02-28 [main] DEBUG i.e.b.g.GestioneprenotazioniApplication - Running with Spring Boot v2.5.4, Spring v5.3.9
+""2022-02-28 [main] INFO  i.e.b.g.GestioneprenotazioniApplication - No active profile set, falling back to default profiles: default
+""2022-02-28 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+""2022-02-28 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 57 ms. Found 5 JPA repository interfaces.
+""2022-02-28 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+""2022-02-28 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+""2022-02-28 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.52]
+""2022-02-28 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+""2022-02-28 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1281 ms
+""2022-02-28 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+""2022-02-28 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+""2022-02-28 [main] INFO  o.s.b.a.h.H2ConsoleAutoConfiguration - H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:prenotazioni'
+""2022-02-28 [main] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+""2022-02-28 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 5.4.32.Final
+""2022-02-28 [main] INFO  o.h.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+""2022-02-28 [main] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+""2022-02-28 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+""2022-02-28 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+""2022-02-28 [main] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+""2022-02-28 [main] WARN  o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.context.ApplicationContextException: Failed to start bean 'webServerStartStop'; nested exception is org.springframework.boot.web.server.PortInUseException: Port 8080 is already in use
+""2022-02-28 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+""2022-02-28 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+""2022-02-28 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+""2022-02-28 [main] INFO  o.a.catalina.core.StandardService - Stopping service [Tomcat]
+""2022-02-28 [main] INFO  o.s.b.a.l.ConditionEvaluationReportLoggingListener - 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+""2022-02-28 [main] ERROR o.s.b.d.LoggingFailureAnalysisReporter - 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Web server failed to start. Port 8080 was already in use.
+
+Action:
+
+Identify and stop the process that's listening on port 8080 or configure this application to listen on another port.
+
+""2022-02-28 [http-nio-8080-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+""2022-02-28 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+""2022-02-28 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 2 ms
+""2022-02-28 [RMI TCP Connection(2)-127.0.0.1] INFO  o.s.b.a.SpringApplicationAdminMXBeanRegistrar$SpringApplicationAdmin - Application shutdown requested.
+""2022-02-28 [RMI TCP Connection(2)-127.0.0.1] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+""2022-02-28 [RMI TCP Connection(2)-127.0.0.1] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+""2022-02-28 [RMI TCP Connection(2)-127.0.0.1] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+"

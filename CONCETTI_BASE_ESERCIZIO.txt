@@ -1,0 +1,206 @@
+	Progetto GestionePrenotazioni, con autenticazione
+
+
+			.MODEL:
+
+Sono le classi pojo, nelle quali vengono definiti attributi, costruttori (con e senza argomenti)
+e varie relazioni tra di loro. In questo progetto:
+
+-Utente  -> entità base con i propri attributi
+
+-User  -> classe utile per il login; viene definita una relazione @ManyToMany con la classe Role, tanti utenti possono
+avere tanti ruoli; (la tabella non si può chiamare user perche è un nome riservato al sistema).
+Con questa relazione @ManytoMany, viene creata un'altra tabella: nella classe si trova il modo per farla: viene
+definita una prima colonna che fa riferimento alla colonna "id" nella classe stessa, ed una seconda colonna che fa
+riferimento alla colonna "id" nella classe Role.
+
+-Role  -> contiene un "id" e un Enum, il quale definisce il tipo di utente che si sta loggando (user o admin).
+
+-Postazione  -> utilizza l'Enum TipoPostazione, oltre agli attributi, c'è una relazione @ManyToOne con Edificio: molte
+postazioni per un Edificio. In una relazione "uno a molti", un record in una tabella può essere associato a uno o
+più record in un'altra tabella. Il nome colonna nella tabella postazione è id_edificio, ed infatti qui troviamo gli edifici associati ad ogni
+postazione;
+
+Edificio  -> attributi + relazione @ManyToOne con Citta: più edifici possono avere una città; anche in questo caso
+troviamo la colonna citta_id, che ci referenzia la città di quello specifico edificio.
+
+-Citta  -> entity con attributi, nessuna relazione
+
+-Prenotazione  -> entity con attributi, doppia relazione: @ManyToOne con Utente, @ManyToOne con Postazione, molte prenotazioni
+possono essere fatte da un utente, molte prenotazioni possono essere fatte per una postazione. Nella tabella troviamo le colonne
+postazione_id, utente_id.
+
+		
+		.REPOSITORY (nessuna annotazione, sono interfacce)
+
+-OGNI repository (ne va creata una per ogni entity) EXTENDS JpaRepository (spring data JPA),
+una volta effettuata l'estensione, tra diamond operator vanno specificate:
+la classe da referenziare, il tipo di chiave primaria (es. Prenotazioni, Long).
+Con questa estensione, rendiamo disponibili i metodi CRUD, una volta istanziata la repository.
+Possiamo inoltre implementare i nostri metodi custom, detti "query methods", i quali avranno il nome dell'operazione
+da effettuare + By "elemento", scritto con la prima lettera maiuscola anche se nella classe è minuscola
+(es. findByNome(String nome)).
+
+
+		.SERVICE (@service / @autowired)
+
+Vengono utilizzati poi nei controller:
+si usa l'annotazione @autowired per istanziare una repository: in queste classi infatti andremo ad utilizzare i metodi di
+ognuna di esse per effettuare operazioni. Si utilizza la classe Optional, in quanto si potrebbe NON restituire nulla.
+Per l'aggiornamento, si cerca l'utente con l'id fornito e lo si va a settare con i parametri presi in ingresso, poi utilizziamo
+il metodo save() per sostituire il vecchio utente con quello nuovo.
+
+
+		ECCEZIONI
+
+Package con 3 classi, nelle quali vengono gestite le eccezioni per avere in output un messaggio personalizzato e
+con meno dati sensibili all'interno di esso.
+-ApiError (pojo) con messaggio e stato, che son quelli che vengono restituiti quando c'è l'errore.
+-GestionePrenotazioniExceptionHandlers extends ResponseEntityExceptionHandler + @controllerAdvice
+-PrenotazioneException extends RuntimeException fa una super nel costruttore
+si utilizzano con throw new PrenotazioneException, e verrà restituito messaggio e codice di errore.
+
+		APPLICATIONSTARTUPRUNNER (@component)
+
+Classe utility per l'inizializzazione del database all'avvio dell'applicazione: vengono istanziate le varie repository e vengono inizializzati
+già all'avvio dei dati che poi troveremo nel database. 
+IMPLEMENTS CommandLineRunner, il quale ha un metodo "run", nel quale vengono messi i metodi (o i log) da eseguire
+all'avvio dell'applicazione!
+
+
+		CONTROLLER(@restController / @RequestMapping)
+
+Ad ogni controller la sua entity; l'annotazione permette di risparmiare del codice, ed indica a Spring che quella classe
+è un controller. Si utilizza anche la seconda annotazione per fornire un percorso che poi sarà utilizzato quando
+andremo ad invocare il servizio da (es) Postman. 
+Annotazione @autowired nella quale si istanzia un Service, al fine di richiamarne i metodi, i quali avranno un proprio
+@***mapping (GET(cercare), POST(creare), PUT(aggiornare), DELETE(eliminare))
+Si usano metodi che restituiscono una ResponseEntity, che permette di restituire anche un codice html (errore oppure OK)
+
+
+		SICUREZZA dipendenza SPRING-SECURITY
+
+se aggiunta la dipendenza e basta, otterremo che spring, ad ogni endpoint, ci chiederà di effettuare l'accesso con username="user" di default, e password che troviamo
+(sempre diversa ad ogni avvio) nella console. Nel file .properties si può aggiungere del testo per personalizzare queste credenziali:
+
+***TESTO DA AGGIUNGERE NEL FILE .PROPERTIES
+spring.security.user.name=IL NOSTRO USERNAME
+spring.security.user.password=LA NOSTRA PASSWORD
+spring.security.user.role=IL RUOLO CHE HA QUESTA AUTENTICAZIONE, per ora non ha effetto
+
+		PARTE ADVANCED (nel testo sottostante con "dipendenza" si intende @autowired) dipendenza POM: jsonwebtoken (jjwt)
+	Componenti:
+	
+		WebSecurityConfig(1)
+		UserDetailsServiceImpl(2)	<---@Service
+		JwtUtils(3)	<---@component
+		LoginRequest(4)
+		LoginResponse(5)
+		AuthController(6)	<---@RestController
+		AuthTokenFilter(7)
+
+Viene creata una classe WebSecurityConfig extends WebSecurityConfigurerAdapter e viene annotata con
+@Configuration, @EnableWebSecurity, @EnableGlobalMethodSecurity(prePostEnabled = true) <- (*questo abilita le annotazioni Spring pre/post*).
+Abbiamo bisogno delle dipendenze da una classe esterna (UserDetailsServiceImpl la quale implements UserDetailsService): ha come dipendenza la repository della classe User.
+(2) ha al suo interno un metodo, loadUserByUsername(String username) che va a caricare dal DB un User che gli viene passato dalla classe
+(1) che lo implementa, viene quindi restituito l'utente trovato.
+
+Questa classe ha 2 metodi configure: uno con AuthenticationManagerBuilder e uno con HttpSecurity.
+
+(3) in questa classe si trovano 2 dipendenze che si riferiscono al file .properties:
+jwt.secret=chiavesegreta123
+jwt.expirationms= 864000000
+nella classe(3) sono 2 attributi annotati con @Value("${jwt.expirationms / jwt.secret}")
+-troviamo il metodo generateJwtToken che determina la scadenza del token e setta a chi assegnarlo (l'utente)
+
+(4) pojo che definisce gli elementi da richiedere nella richiesta POST che andrà fatta per l'autenticazione
+
+(6) classe controller delegata alla ricezione delle informazioni e all'utilizzo di esse nelle altre classi nelle quali
+ha dipendenze al suo interno, ai fini di autenticare o meno l'utente(!)
+
+(7) extends OncePerRequestFilter, serve per estrarre l'header del nostro token, senza questa classe l'autorizzazione sarebbe sempre negata.
+Per funzionare ha bisogno di alcune dipendenze con altre classi (2) e (3).
+"Authorization" equivale al campo messo in Postman, stiamo dicendo al nostro filtro di guardare in quel campo
+e di rendere effettiva la nostra autenticazione(!)
+
+
+------------------------------------------------------PARTE DATABASE
+
+		FILE .PROPERTIES PER CONNESSIONE AL DATABASE ***POSTGRESQL***
+
+spring.sql.init.platform=postgres	<--- indica il tipo di db al quale collegarsi
+spring.datasource.url=jdbc:postgresql://localhost/	<--- url per jdbc, per il driver, specificare il NOME DEL DATABASE
+spring.datasource.username=postgres
+spring.datasource.password=	<---PASSWORD
+spring.sql.init.mode=always
+spring.jpa.hibernate.ddl-auto=	<--- CAMBIA IN BASE A: VEDI SOTTO
+
+opzioni di VEDI SOTTO:
+validate: validate the schema, makes no changes to the database(nel caso di discrepanze tra entity e db,
+viene lanciata un'eccezione)
+update: update the schema
+create: creates the schema, destroying previous data
+create-drop: drop the schema when the SessionFactory is closed explicitly, typically when the application is stopped
+none: does nothing with the schema, makes no changes to the database
+
+logging.level.root=INFO	<---decidiamo il livello di dettaglio delle informazioni da mostrare in log
+WARN-INFO-DEBUG-TRACE	<---livelli disponibili
+slf4j: logger standard per Springboot
+
+Quick-copy:
+
+spring.sql.init.platform=postgres	
+spring.datasource.url=jdbc:postgresql://localhost/
+spring.datasource.username=postgres
+spring.datasource.password=
+spring.sql.init.mode=always
+spring.jpa.hibernate.ddl-auto=create-drop
+logging.level.root=INFO
+
+
+		FILE .PROPERTIES PER CONNESSIONE AL DATABASE ***H2***
+
+# H2 database settings, dipendenza h2
+
+spring.datasource.url=jdbc:h2:mem:NOMEDATABASE
+spring.datasource.driverClassName=org.h2.Driver
+spring.datasource.username=sa
+spring.datasource.password=
+spring.jpa.database-platform=org.hibernate.dialect.H2Dialect
+
+### Enable the console for the H2 database ###
+
+spring.h2.console.enabled=true
+
+# JPA property settings
+
+spring.jpa.hibernate.ddl-auto=none
+spring.sql.init.mode=always
+spring.jpa.properties.hibernate.show_sql=true
+
+
+
+
+
+		ALCUNE ANNOTAZIONI
+
+@component: gestita automaticamente da spring creando opportuno bean:
+Spring ApplicationContext (ctx) è il contesto applicativo in cui all'avvio si legge tutti i @bean presenti nel codice e li
+istanzia. La classe cosi annotata, viene istanziata nel ctx e con essa, avviene la Dependency Injection di tutti gli
+elementi iniettati in quella classe. Vengono rilevati in automatico quindi, i nostri bean personalizzati.
+Viene messa sulla classe da aggiungere al ctx, al contrario di @bean che viene annotato sui metodi.
+---------------
+@PathVariable: nel controller per prendere il valore passato in input nell'URI, es:
+@PutMapping(path = "/citta/{id}")
+---------------
+@requestBody: prende in input tutto il corpo json passato da Postman
+
+
+
+DOMANDE
+CONSUMES NON SERVE PIU NEL CONTROLLER PER @REQUESTBODY?
+PAGEABLE NELLE REPOSITORY
+JPA REPOSITORY: QUERY METHODS, RIPASSO
+E SE IO VOLESSI UTILIZZARLI, DOVE SI USANO?
+E SE VOLESSI LOGGARMI COME USER? COME MODIFICO IL CODICE?
+EdificioController find.get()
